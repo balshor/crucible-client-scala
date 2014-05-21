@@ -18,3 +18,25 @@ libraryDependencies ++= Seq(
 )
 
 EclipseKeys.withSource := true
+
+pomExtra := {
+ <url>https://github.com/ogrodnek/crucible-client-scala</url>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>https://github.com/ogrodnek/crucible-client-scala</url>
+    <connection>https://github.com/ogrodnek/crucible-client-scala.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>larry</id>
+      <name>Larry Ogrodnek</name>
+      <email>larry@bizo.com</email>
+    </developer>
+  </developers>
+}
