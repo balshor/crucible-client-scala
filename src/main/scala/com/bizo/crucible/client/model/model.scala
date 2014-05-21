@@ -5,6 +5,8 @@ import java.util.Date
 case class Project(
   id: Int,
   name: String,
+  key: String,
+  defaultRepositoryName: String,
   allowReviewersToJoin: Boolean,
   defaultReviewers: Seq[String],
   defaultDuration: Option[Int]
