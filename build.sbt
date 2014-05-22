@@ -19,6 +19,14 @@ libraryDependencies ++= Seq(
 
 EclipseKeys.withSource := true
 
+site.settings
+
+site.includeScaladoc()
+
+ghpages.settings
+
+git.remoteRepo := "git@github.com:ogrodnek/crucible-client-scala.git"
+
 pomExtra := {
  <url>https://github.com/ogrodnek/crucible-client-scala</url>
   <licenses>
