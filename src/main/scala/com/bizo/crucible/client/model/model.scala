@@ -31,7 +31,7 @@ trait Review {
   def permaId: PermaId
   def projectKey: String
   def name: String
-  def description: String
+  def description: Option[String]
   def author: User
   def creator: User
   def createDate: Date
@@ -43,7 +43,7 @@ case class ReviewSummary(
   permaId: PermaId,
   projectKey: String,
   name: String,
-  description: String,
+  description: Option[String],
   author: User,
   creator: User,
   createDate: Date,
@@ -55,7 +55,7 @@ case class ReviewDetails(
   permaId: PermaId,
   projectKey: String,
   name: String,
-  description: String,
+  description: Option[String],
   author: User,
   creator: User,
   createDate: Date,
