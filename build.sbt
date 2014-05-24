@@ -1,5 +1,7 @@
 organization := "com.bizo"
 
+organizationName := "com.bizo"
+
 name := "crucible-client-scala"
 
 version := "1.0.0"
@@ -26,6 +28,8 @@ site.includeScaladoc()
 ghpages.settings
 
 git.remoteRepo := "git@github.com:ogrodnek/crucible-client-scala.git"
+
+sonatypeSettings
 
 pomExtra := {
  <url>https://github.com/ogrodnek/crucible-client-scala</url>
