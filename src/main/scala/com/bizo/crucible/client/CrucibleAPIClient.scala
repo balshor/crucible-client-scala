@@ -55,7 +55,9 @@ class CrucibleAPIClient(host: String, creds: CredentialsProvider) extends Crucib
   
   override def getUsers(): Seq[User] = {
     val r = resource(s"/users-v1").accept("application/json")
-    parse(r.get(classOf[String])).extract[Seq[User]]
+    val users = parse(r.get(classOf[String])) \ "userData"
+    
+    users.extract[Seq[User]]
   }
   
   private def resource(path: String) = {
