@@ -28,6 +28,15 @@ class CrucibleAPIClient(host: String, creds: CredentialsProvider) extends Crucib
     data.extract[Seq[Project]]
   }
   
+  override def getRepositories(): Seq[Repository] = {
+    val r = resource("/repositories-v1").accept("application/json")
+    
+    val repos = parse(r.get(classOf[String])) \ "repoData"
+    
+    repos.extract[Seq[Repository]]
+  }
+
+  
   private val flattenReviewers: PartialFunction[JField, JField] = {
     case JField(field, JObject(List(("reviewer", reviewers)))) if field == "reviewers" => {
       JField(field, reviewers)

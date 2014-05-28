@@ -64,6 +64,13 @@ case class ReviewDetails(
   reviewers: Seq[ReviewerState]
 ) extends Review
 
+case class Repository(
+  name: String,
+  `type`: String,
+  enabled: Boolean,
+  location: String
+)
+
 
 /**
  * User defined review filter.
