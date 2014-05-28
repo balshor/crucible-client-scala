@@ -4,3 +4,4 @@ target/
 .DS_Store
 /.classpath
 /.settings/
+/src/main/scala/com/bizo/crucible/client/example/
