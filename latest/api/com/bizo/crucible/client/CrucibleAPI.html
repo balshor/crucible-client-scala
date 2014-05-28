@@ -39,7 +39,8 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Simple API client for Crucible's REST API.</p><p>see: https://docs.atlassian.com/fisheye-crucible/latest/wadl/crucible.html
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
@@ -112,16 +113,42 @@
       </span>
       </h4>
       
-    </li><li name="com.bizo.crucible.client.CrucibleAPI#getReviewsInState" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="getReviewsInState(state:String*):Seq[com.bizo.crucible.client.model.ReviewSummary]"></a>
-      <a id="getReviewsInState(String*):Seq[ReviewSummary]"></a>
+    </li><li name="com.bizo.crucible.client.CrucibleAPI#getReviewDetailsWithFilter" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="getReviewDetailsWithFilter(filter:com.bizo.crucible.client.model.ReviewFilter):Seq[com.bizo.crucible.client.model.ReviewDetails]"></a>
+      <a id="getReviewDetailsWithFilter(ReviewFilter):Seq[ReviewDetails]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">abstract </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getReviewsInState</span><span class="params">(<span name="state">state: <span class="extype" name="scala.Predef.String">String</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="model/ReviewSummary.html" class="extype" name="com.bizo.crucible.client.model.ReviewSummary">ReviewSummary</a>]</span>
+        <span class="name">getReviewDetailsWithFilter</span><span class="params">(<span name="filter">filter: <a href="model/ReviewFilter.html" class="extype" name="com.bizo.crucible.client.model.ReviewFilter">ReviewFilter</a></span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="model/ReviewDetails.html" class="extype" name="com.bizo.crucible.client.model.ReviewDetails">ReviewDetails</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="com.bizo.crucible.client.CrucibleAPI#getReviewDetailsWithFilter" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="getReviewDetailsWithFilter(filter:com.bizo.crucible.client.model.PredefinedReviewFilter):Seq[com.bizo.crucible.client.model.ReviewDetails]"></a>
+      <a id="getReviewDetailsWithFilter(PredefinedReviewFilter):Seq[ReviewDetails]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getReviewDetailsWithFilter</span><span class="params">(<span name="filter">filter: <a href="model/PredefinedReviewFilter.html" class="extype" name="com.bizo.crucible.client.model.PredefinedReviewFilter">PredefinedReviewFilter</a></span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="model/ReviewDetails.html" class="extype" name="com.bizo.crucible.client.model.ReviewDetails">ReviewDetails</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="com.bizo.crucible.client.CrucibleAPI#getReviewsInState" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="getReviewsInState(state:com.bizo.crucible.client.model.ReviewState*):Seq[com.bizo.crucible.client.model.ReviewSummary]"></a>
+      <a id="getReviewsInState(ReviewState*):Seq[ReviewSummary]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getReviewsInState</span><span class="params">(<span name="state">state: <a href="model/ReviewState.html" class="extype" name="com.bizo.crucible.client.model.ReviewState">ReviewState</a>*</span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<a href="model/ReviewSummary.html" class="extype" name="com.bizo.crucible.client.model.ReviewSummary">ReviewSummary</a>]</span>
       </span>
       </h4>
       

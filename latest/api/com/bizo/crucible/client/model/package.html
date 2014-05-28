@@ -71,6 +71,19 @@
       </span>
       </h4>
       
+    </li><li name="com.bizo.crucible.client.model.PredefinedReviewFilter" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PredefinedReviewFilterextendsAnyRef"></a>
+      <a id="PredefinedReviewFilter:PredefinedReviewFilter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PredefinedReviewFilter.html"><span class="name">PredefinedReviewFilter</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
     </li><li name="com.bizo.crucible.client.model.Project" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ProjectextendsProductwithSerializable"></a>
       <a id="Project:Project"></a>
@@ -106,7 +119,33 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="ReviewDetails.html"><span class="name">ReviewDetails</span></a><span class="params">(<span name="permaId">permaId: <a href="PermaId.html" class="extype" name="com.bizo.crucible.client.model.PermaId">PermaId</a></span>, <span name="projectKey">projectKey: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="description">description: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="author">author: <a href="User.html" class="extype" name="com.bizo.crucible.client.model.User">User</a></span>, <span name="creator">creator: <a href="User.html" class="extype" name="com.bizo.crucible.client.model.User">User</a></span>, <span name="createDate">createDate: <span class="extype" name="java.util.Date">Date</span></span>, <span name="dueDate">dueDate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.util.Date">Date</span>]</span>, <span name="closeDate">closeDate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.util.Date">Date</span>]</span>, <span name="reviewers">reviewers: <span class="extype" name="scala.Seq">Seq</span>[<a href="ReviewerState.html" class="extype" name="com.bizo.crucible.client.model.ReviewerState">ReviewerState</a>]</span>)</span><span class="result"> extends <a href="Review.html" class="extype" name="com.bizo.crucible.client.model.Review">Review</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="ReviewDetails.html"><span class="name">ReviewDetails</span></a><span class="params">(<span name="permaId">permaId: <a href="PermaId.html" class="extype" name="com.bizo.crucible.client.model.PermaId">PermaId</a></span>, <span name="projectKey">projectKey: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="description">description: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="author">author: <a href="User.html" class="extype" name="com.bizo.crucible.client.model.User">User</a></span>, <span name="creator">creator: <a href="User.html" class="extype" name="com.bizo.crucible.client.model.User">User</a></span>, <span name="createDate">createDate: <span class="extype" name="java.util.Date">Date</span></span>, <span name="dueDate">dueDate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.util.Date">Date</span>]</span>, <span name="closeDate">closeDate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.util.Date">Date</span>]</span>, <span name="reviewers">reviewers: <span class="extype" name="scala.Seq">Seq</span>[<a href="ReviewerState.html" class="extype" name="com.bizo.crucible.client.model.ReviewerState">ReviewerState</a>]</span>)</span><span class="result"> extends <a href="Review.html" class="extype" name="com.bizo.crucible.client.model.Review">Review</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.bizo.crucible.client.model.ReviewFilter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReviewFilterextendsProductwithSerializable"></a>
+      <a id="ReviewFilter:ReviewFilter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReviewFilter.html"><span class="name">ReviewFilter</span></a><span class="params">(<span name="states">states: <span class="extype" name="scala.Seq">Seq</span>[<a href="ReviewState.html" class="extype" name="com.bizo.crucible.client.model.ReviewState">ReviewState</a>] = <span class="defval" name="collection.this.Seq.apply[Nothing]()">...</span></span>, <span name="fromDate">fromDate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>, <span name="toDate">toDate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">User defined review filter.</p>
+    </li><li name="com.bizo.crucible.client.model.ReviewState" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReviewStateextendsAnyRef"></a>
+      <a id="ReviewState:ReviewState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReviewState.html"><span class="name">ReviewState</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
@@ -119,7 +158,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="ReviewSummary.html"><span class="name">ReviewSummary</span></a><span class="params">(<span name="permaId">permaId: <a href="PermaId.html" class="extype" name="com.bizo.crucible.client.model.PermaId">PermaId</a></span>, <span name="projectKey">projectKey: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="description">description: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="author">author: <a href="User.html" class="extype" name="com.bizo.crucible.client.model.User">User</a></span>, <span name="creator">creator: <a href="User.html" class="extype" name="com.bizo.crucible.client.model.User">User</a></span>, <span name="createDate">createDate: <span class="extype" name="java.util.Date">Date</span></span>, <span name="dueDate">dueDate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.util.Date">Date</span>]</span>, <span name="closeDate">closeDate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.util.Date">Date</span>]</span>)</span><span class="result"> extends <a href="Review.html" class="extype" name="com.bizo.crucible.client.model.Review">Review</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="ReviewSummary.html"><span class="name">ReviewSummary</span></a><span class="params">(<span name="permaId">permaId: <a href="PermaId.html" class="extype" name="com.bizo.crucible.client.model.PermaId">PermaId</a></span>, <span name="projectKey">projectKey: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="description">description: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="author">author: <a href="User.html" class="extype" name="com.bizo.crucible.client.model.User">User</a></span>, <span name="creator">creator: <a href="User.html" class="extype" name="com.bizo.crucible.client.model.User">User</a></span>, <span name="createDate">createDate: <span class="extype" name="java.util.Date">Date</span></span>, <span name="dueDate">dueDate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.util.Date">Date</span>]</span>, <span name="closeDate">closeDate: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.util.Date">Date</span>]</span>)</span><span class="result"> extends <a href="Review.html" class="extype" name="com.bizo.crucible.client.model.Review">Review</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -154,7 +193,36 @@
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="com.bizo.crucible.client.model.PredefinedReviewFilter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PredefinedReviewFilter"></a>
+      <a id="PredefinedReviewFilter:PredefinedReviewFilter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PredefinedReviewFilter$.html"><span class="name">PredefinedReviewFilter</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="com.bizo.crucible.client.model.ReviewState" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReviewState"></a>
+      <a id="ReviewState:ReviewState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ReviewState$.html"><span class="name">ReviewState</span></a>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
 
         
 
