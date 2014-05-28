@@ -76,3 +76,50 @@ object ReviewState {
   case object Rejected extends ReviewState
   case object Unknown extends ReviewState
 }
+
+sealed abstract class ReviewFilter
+object ReviewFilter {
+    /** Filters that apply to all reviews */
+    object global {
+      /** All reviews for everyone */
+      case object allReviews extends ReviewFilter
+      
+      /** Open reviews for everyone */
+      case object allOpenReviews extends ReviewFilter
+      
+      /** Closed reviews for everyone */
+      case object allClosedReviews extends ReviewFilter
+      
+      /** Draft reviews for everyone */
+      case object draftReviews extends ReviewFilter
+    }
+    /** Filters that only apply to current user */
+    object user {
+      /** Reviews on which the current user is an uncompleted reviewer */
+      case object toReview extends ReviewFilter
+      
+      /**  Reviews waiting to be approved by the current user */
+      case object requireMyApproval extends ReviewFilter
+      
+      /** Completed reviews which are ready for the current user to summarize */
+      case object toSummarize extends ReviewFilter
+      
+      /** Reviews with uncompleted reviewers, on which the current reviewer is the moderator */
+      case object outForReview extends ReviewFilter
+      
+      /** Draft reviews created by the current user */
+      case object drafts extends ReviewFilter
+      
+      /** Open reviews created by the current user */
+      case object open extends ReviewFilter
+      
+      /** Open reviews where the current user is a completed reviewer */
+      case object completed extends ReviewFilter
+      
+      /** Closed reviews created by the current user */
+      case object closed extends ReviewFilter
+      
+      /** Abandoned reviews created by the current user */
+      case object trash extends ReviewFilter
+    }
+}

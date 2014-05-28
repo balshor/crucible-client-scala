@@ -8,4 +8,5 @@ trait CrucibleAPI {
   
   def getReviewsInState(state: ReviewState*): Seq[ReviewSummary]
   def getReview(id: PermaId): ReviewDetails
+  def getReviewDetailsWithFilter(filter: ReviewFilter): Seq[ReviewDetails]
 }

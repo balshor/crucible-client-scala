@@ -27,16 +27,16 @@ class CrucibleAPIClient(host: String, creds: CredentialsProvider) extends Crucib
     data.extract[Seq[Project]]
   }
   
+  private val flattenReviewers: PartialFunction[JField, JField] = {
+    case JField(field, JObject(List(("reviewer", reviewers)))) if field == "reviewers" => {
+      JField(field, reviewers)
+    }
+  }
+  
   override def getReview(id: PermaId): ReviewDetails = {
     val r = resource(s"/reviews-v1/${id.id}/details").accept("application/json")
     
     val review = parse(r.get(classOf[String]))
-    
-    val flattenReviewers: PartialFunction[JField, JField] = {
-      case JField(field, JObject(List(("reviewer", reviewers)))) if field == "reviewers" => {
-        JField(field, reviewers)
-      }
-    }
 
     review.transformField(flattenReviewers).extract[ReviewDetails]
   }
@@ -50,8 +50,14 @@ class CrucibleAPIClient(host: String, creds: CredentialsProvider) extends Crucib
     
     reviews.extract[Seq[ReviewSummary]]
   }
-
-
+  
+  override def getReviewDetailsWithFilter(filter: ReviewFilter): Seq[ReviewDetails] = {
+    val r = resource(s"/reviews-v1/filter/${filter}/details").accept("application/json")
+    
+    val reviews = parse(r.get(classOf[String])) \ "detailedReviewData"
+    
+    reviews.transformField(flattenReviewers).extract[Seq[ReviewDetails]]
+  }
   
   override def getUsers(): Seq[User] = {
     val r = resource(s"/users-v1").accept("application/json")
