@@ -41,7 +41,7 @@ class CrucibleAPIClient(host: String, creds: CredentialsProvider) extends Crucib
     review.transformField(flattenReviewers).extract[ReviewDetails]
   }
   
-  override def getReviewsInState(state: String*): Seq[ReviewSummary] = {
+  override def getReviewsInState(state: ReviewState*): Seq[ReviewSummary] = {
     val states = state.mkString(",")
     
     val r = resource("/reviews-v1").queryParam("state", states).accept("application/json")

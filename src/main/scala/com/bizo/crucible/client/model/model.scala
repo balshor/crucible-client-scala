@@ -63,3 +63,16 @@ case class ReviewDetails(
   closeDate: Option[Date],
   reviewers: Seq[ReviewerState]
 ) extends Review
+
+
+sealed abstract class ReviewState
+object ReviewState {
+  case object Draft extends ReviewState
+  case object Approval extends ReviewState
+  case object Review extends ReviewState
+  case object Summarize extends ReviewState
+  case object Closed extends ReviewState
+  case object Dead extends ReviewState
+  case object Rejected extends ReviewState
+  case object Unknown extends ReviewState
+}
