@@ -14,5 +14,5 @@ for (review <- client.getReviewsInState(ReviewState.Review)) {
 }
 ```
 
-See the [API documentation](http://ogrodnek.github.io/crucible-client-scala/latest/api/#com.bizo.crucible.client.package) for more details.
+See the [API documentation](http://ogrodnek.github.io/crucible-client-scala/latest/api/#com.bizo.crucible.client.CrucibleAPI) for more details.
 
