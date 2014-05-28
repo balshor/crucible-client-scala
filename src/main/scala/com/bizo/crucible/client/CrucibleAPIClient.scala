@@ -51,7 +51,7 @@ class CrucibleAPIClient(host: String, creds: CredentialsProvider) extends Crucib
     reviews.extract[Seq[ReviewSummary]]
   }
   
-  override def getReviewDetailsWithFilter(filter: ReviewFilter): Seq[ReviewDetails] = {
+  override def getReviewDetailsWithFilter(filter: PredefinedReviewFilter): Seq[ReviewDetails] = {
     val r = resource(s"/reviews-v1/filter/${filter}/details").accept("application/json")
     
     val reviews = parse(r.get(classOf[String])) \ "detailedReviewData"

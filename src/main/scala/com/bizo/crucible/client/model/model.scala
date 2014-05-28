@@ -77,49 +77,49 @@ object ReviewState {
   case object Unknown extends ReviewState
 }
 
-sealed abstract class ReviewFilter
-object ReviewFilter {
+sealed abstract class PredefinedReviewFilter
+object PredefinedReviewFilter {
     /** Filters that apply to all reviews */
     object global {
       /** All reviews for everyone */
-      case object allReviews extends ReviewFilter
+      case object allReviews extends PredefinedReviewFilter
       
       /** Open reviews for everyone */
-      case object allOpenReviews extends ReviewFilter
+      case object allOpenReviews extends PredefinedReviewFilter
       
       /** Closed reviews for everyone */
-      case object allClosedReviews extends ReviewFilter
+      case object allClosedReviews extends PredefinedReviewFilter
       
       /** Draft reviews for everyone */
-      case object draftReviews extends ReviewFilter
+      case object draftReviews extends PredefinedReviewFilter
     }
     /** Filters that only apply to current user */
     object user {
       /** Reviews on which the current user is an uncompleted reviewer */
-      case object toReview extends ReviewFilter
+      case object toReview extends PredefinedReviewFilter
       
       /**  Reviews waiting to be approved by the current user */
-      case object requireMyApproval extends ReviewFilter
+      case object requireMyApproval extends PredefinedReviewFilter
       
       /** Completed reviews which are ready for the current user to summarize */
-      case object toSummarize extends ReviewFilter
+      case object toSummarize extends PredefinedReviewFilter
       
       /** Reviews with uncompleted reviewers, on which the current reviewer is the moderator */
-      case object outForReview extends ReviewFilter
+      case object outForReview extends PredefinedReviewFilter
       
       /** Draft reviews created by the current user */
-      case object drafts extends ReviewFilter
+      case object drafts extends PredefinedReviewFilter
       
       /** Open reviews created by the current user */
-      case object open extends ReviewFilter
+      case object open extends PredefinedReviewFilter
       
       /** Open reviews where the current user is a completed reviewer */
-      case object completed extends ReviewFilter
+      case object completed extends PredefinedReviewFilter
       
       /** Closed reviews created by the current user */
-      case object closed extends ReviewFilter
+      case object closed extends PredefinedReviewFilter
       
       /** Abandoned reviews created by the current user */
-      case object trash extends ReviewFilter
+      case object trash extends PredefinedReviewFilter
     }
 }
