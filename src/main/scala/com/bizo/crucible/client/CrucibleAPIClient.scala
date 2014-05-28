@@ -23,9 +23,9 @@ class CrucibleAPIClient(host: String, creds: CredentialsProvider) extends Crucib
   override def getProjects(): Seq[Project] = {
     val r = resource("/projects-v1").accept("application/json")
     
-    val data = parse(r.get(classOf[String])) \ "projectData"
+    val projects = parse(r.get(classOf[String])) \ "projectData"
     
-    data.extract[Seq[Project]]
+    projects.extract[Seq[Project]]
   }
   
   override def getRepositories(): Seq[Repository] = {
