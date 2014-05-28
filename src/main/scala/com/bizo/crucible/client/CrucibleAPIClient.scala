@@ -9,6 +9,7 @@ import org.json4s.native.JsonMethods._
 import org.json4s.native.Serialization
 import org.json4s.native.Serialization.{read, writePretty}
 import java.text.SimpleDateFormat
+import com.sun.jersey.api.client.WebResource
 
 
 class CrucibleAPIClient(host: String, creds: CredentialsProvider) extends CrucibleAPI {
@@ -52,12 +53,28 @@ class CrucibleAPIClient(host: String, creds: CredentialsProvider) extends Crucib
   }
   
   override def getReviewDetailsWithFilter(filter: PredefinedReviewFilter): Seq[ReviewDetails] = {
-    val r = resource(s"/reviews-v1/filter/${filter}/details").accept("application/json")
+    val r = resource(s"/reviews-v1/filter/${filter}/details")
+    parseDetailedReviewData(r)    
+  }
+  
+  override def getReviewDetailsWithFilter(filter: ReviewFilter): Seq[ReviewDetails] = {
+    val _r = resource(s"/reviews-v1/filter/details")
     
-    val reviews = parse(r.get(classOf[String])) \ "detailedReviewData"
+    val fromFilter = filter.fromDate.map(("fromDate", _))
+    val toFilter = filter.toDate.map(("toDate", _))
+    val stateFilter = if (filter.states.isEmpty) None else Some(("states", filter.states.mkString(",")))
+    
+    val r = Seq(fromFilter, toFilter, stateFilter).flatten.toSeq.foldLeft(_r)((r, f) => r.queryParam(f._1, f._2.toString))
+    
+    parseDetailedReviewData(r)
+  }
+  
+  private def parseDetailedReviewData(r: WebResource): Seq[ReviewDetails] = {
+    val reviews = parse(r.accept("application/json").get(classOf[String])) \ "detailedReviewData"
     
     reviews.transformField(flattenReviewers).extract[Seq[ReviewDetails]]
   }
+
   
   override def getUsers(): Seq[User] = {
     val r = resource(s"/users-v1").accept("application/json")

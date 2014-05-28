@@ -65,6 +65,18 @@ case class ReviewDetails(
 ) extends Review
 
 
+/**
+ * User defined review filter.
+ * 
+ * @param fromDate from time in millis, inclusive
+ * @param toDate to time in millis, exclusive
+ */
+case class ReviewFilter(
+  states: Seq[ReviewState] = Seq(),
+  fromDate: Option[Long] = None,
+  toDate: Option[Long] = None
+)
+
 sealed abstract class ReviewState
 object ReviewState {
   case object Draft extends ReviewState
