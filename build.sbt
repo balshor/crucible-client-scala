@@ -6,7 +6,7 @@ name := "crucible-client-scala"
 
 version := "1.1.1"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.11.5"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-language:_")
 
